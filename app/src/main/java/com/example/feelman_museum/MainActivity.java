@@ -44,47 +44,49 @@ public class MainActivity extends AppCompatActivity {
         for(int image : images) {
             fllipperImages(image);
         }
-        //오시는길 버튼
-        Button button5 = findViewById(R.id.menu5); //다른 버튼 사용할 때 변수명 바꿔서 사용
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Activity_route.class);
-                startActivity(intent);
-            }
-        });
-        //층별 안내 버튼
-        Button button2 = findViewById(R.id.menu2); //다른 버튼 사용할 때 변수명 바꿔서 사용
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Activity_floor_info.class);
-                startActivity(intent);
-            }
-        });
-        //테스트
+        //연혁
         Button button1 = findViewById(R.id.menu1); //다른 버튼 사용할 때 변수명 바꿔서 사용
         button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
-                startActivity(intent);
-            }
-        });
-        //연혁
-        Button button3 = findViewById(R.id.menu3); //다른 버튼 사용할 때 변수명 바꿔서 사용
-        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Activity_intro.class);
                 startActivity(intent);
             }
         });
+        //테스트
+        Button button2 = findViewById(R.id.menu2); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
+                startActivity(intent);
+            }
+        });
+        //층별 안내 버튼
+        Button button3 = findViewById(R.id.menu3); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_floor_info.class);
+                startActivity(intent);
+            }
+        });
+
+
         Button button4 = findViewById(R.id.menu4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ClassifierActivity.class);
+                Intent intent = new Intent(MainActivity.this, Activity_program.class);
+                startActivity(intent);
+            }
+        });
+        //오시는길 버튼
+        Button button5 = findViewById(R.id.menu5); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_route.class);
                 startActivity(intent);
             }
         });

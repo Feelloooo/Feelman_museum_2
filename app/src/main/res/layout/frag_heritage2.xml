@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
-        />
-</LinearLayout>
+        android:id="@+id/recyclerView"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/floating_1"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/ic_action_camera"
+        android:backgroundTint="@color/purple_700"
+        app:backgroundTint="@color/purple_700"
+        app:tint="@null"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</FrameLayout>

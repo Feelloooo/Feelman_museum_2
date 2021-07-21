@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
@@ -27,7 +28,6 @@ public class Frag_heritage2 extends Fragment {
     private View view;
     RecyclerView recyclerView;
     MyAdapter myAdapter;
-
     SearchView searchView;
 
     public static Frag_heritage2 newInstance(){
@@ -46,6 +46,8 @@ public class Frag_heritage2 extends Fragment {
         myAdapter = new MyAdapter(getContext(), getMylist());
         recyclerView.setAdapter(myAdapter);
 
+        FloatingActionButton fab= view.findViewById(R.id.floating_1);
+        fab.setOnClickListener(new FABClickListener());
         setHasOptionsMenu(true);
         return view;
     }
@@ -70,7 +72,7 @@ public class Frag_heritage2 extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        inflater.inflate(R.menu.menu_1, menu);
+        inflater.inflate(R.menu.menu, menu);
 
             SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
             searchView = (SearchView) menu.findItem(R.id.action_search)
@@ -94,16 +96,25 @@ public class Frag_heritage2 extends Fragment {
             });
         }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
+        private class FABClickListener implements View.OnClickListener{
+            @Override
+            public void onClick(View ciew){
+                Intent intent = new Intent(getActivity(),ClassifierActivity.class);
+                startActivity(intent);
 
-            int id = item.getItemId();
-            //or switch문을 이용하면 될듯 하다.
-            if (id == R.id.action_camera) {
-                Intent homeIntent = new Intent(getContext(), MainActivity.class);
-                startActivity(homeIntent);
             }
-            return super.onOptionsItemSelected(item);
         }
+//
+//        @Override
+//        public boolean onOptionsItemSelected(MenuItem item) {
+//
+//            int id = item.getItemId();
+//            //or switch문을 이용하면 될듯 하다.
+//            if (id == R.id.action_camera) {
+//                Intent homeIntent = new Intent(getContext(), MainActivity.class);
+//                startActivity(homeIntent);
+//            }
+//            return super.onOptionsItemSelected(item);
+//        }
 }
 
