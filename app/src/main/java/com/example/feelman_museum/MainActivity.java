@@ -1,10 +1,13 @@
 package com.example.feelman_museum;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -15,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import java.security.MessageDigest;
@@ -115,6 +119,34 @@ public class MainActivity extends AppCompatActivity {
         v_fllipper.setInAnimation(this,R.anim.slide_in_right);
         v_fllipper.setOutAnimation(this,R.anim.slide_out_left);
     }
+
+    @Override
+    public void onBackPressed() {
+        showDialog();
+    }
+
+    void showDialog() {
+        AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this)
+                .setMessage("종료하시겠습니까?")
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("취소", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+
+                    }
+                });
+        AlertDialog msgDlg = msgBuilder.create();
+        msgDlg.show();
+    }
+
 //    private void getHashKey() {
 //            PackageInfo packageInfo = null;
 //            try {
