@@ -31,6 +31,11 @@
                 android:textStyle="bold"
                 android:textSize="30sp"
                 android:textColor="#000"/>
+            <Button
+                android:id="@+id/s"
+                android:text="재생"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
