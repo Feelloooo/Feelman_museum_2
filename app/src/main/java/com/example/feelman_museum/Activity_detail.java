@@ -25,10 +25,26 @@ public class Activity_detail extends AppCompatActivity {
     Button startButton,stopButton;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        mTitleTv = findViewById(R.id.title);
+        mEraTv = findViewById(R.id.era);
+        mPlaceTv = findViewById(R.id.place);
+        mDescTv = findViewById(R.id.description);
+        mDetailTv = findViewById(R.id.detail);
+        mImageIv = findViewById(R.id.imageView);
+
+        Intent intent = getIntent();
+
+        String mTitle = intent.getStringExtra("iTitle");
+        String mEra = intent.getStringExtra("iEra");
+        String mPlace = intent.getStringExtra("iPlace");
+        String mDescription = intent.getStringExtra("iDesc");
+        String mDetail = intent.getStringExtra("iDetail");
 
         startButton = (Button)findViewById(R.id.s);
 
@@ -49,30 +65,88 @@ public class Activity_detail extends AppCompatActivity {
                 }
                 else // 미디어 리소스를 생성하고 플레이 시킨다.
                 {
-                    mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.asd);
-                    mediaPlayer.start();
+                    if(mTitle.equals("물고기모양 예술품")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m1);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("흥수아이 1호")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m2);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("슴베찌르개")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m3);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("들소머리 예술품")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m4);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("얼굴모양 예술품")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m5);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("찌르개")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m6);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("주먹도끼")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m7);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("상아")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m8);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("쌍코뿔이")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m9);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else if(mTitle.equals("동굴곰")) {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.m10);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
+                    else {
+                        mediaPlayer = MediaPlayer.create(Activity_detail.this, R.raw.s);
+                        mediaPlayer.start();
+                        // 반복재생하기
+                        mediaPlayer.setLooping(true);
+                        startButton.setText("종료 하기");
+                    }
 
-                    // 반복재생하기
-                    mediaPlayer.setLooping(true);
-                    startButton.setText("종료 하기");
                 }
             }
         });
 
-        mTitleTv = findViewById(R.id.title);
-        mEraTv = findViewById(R.id.era);
-        mPlaceTv = findViewById(R.id.place);
-        mDescTv = findViewById(R.id.description);
-        mDetailTv = findViewById(R.id.detail);
-        mImageIv = findViewById(R.id.imageView);
-
-        Intent intent = getIntent();
-
-        String mTitle = intent.getStringExtra("iTitle");
-        String mEra = intent.getStringExtra("iEra");
-        String mPlace = intent.getStringExtra("iPlace");
-        String mDescription = intent.getStringExtra("iDesc");
-        String mDetail = intent.getStringExtra("iDetail");
 
         byte[] mBytes = getIntent().getByteArrayExtra("iImage");
         Bitmap bitmap = BitmapFactory.decodeByteArray(mBytes, 0, mBytes.length);
