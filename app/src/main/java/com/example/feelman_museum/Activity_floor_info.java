@@ -42,6 +42,14 @@ public class Activity_floor_info extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button button3 = findViewById(R.id.special_floor); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_floor_3.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

@@ -16,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Feelman_museum"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity_detail_2"></activity>
+        <activity android:name=".Description1"></activity>
+        <activity android:name=".Description2"></activity>
+        <activity android:name=".Description3"></activity>
+        <activity android:name=".Description4"></activity>
+        <activity android:name=".Activity_detail_2" />
         <activity android:name=".Activity_test" />
         <activity
             android:name=".Activity_loading"
@@ -65,6 +69,9 @@
         <activity
             android:name=".Activity_heritage"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Activity_floor_3"
+            android:parentActivityName=".Activity_floor_info" />
         <activity
             android:name=".Activity_floor_2"
             android:parentActivityName=".Activity_floor_info" />

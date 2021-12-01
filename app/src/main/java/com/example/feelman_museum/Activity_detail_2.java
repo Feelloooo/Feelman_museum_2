@@ -1,4 +1,4 @@
-package org.project.cbnu_museum;
+package com.example.feelman_museum;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

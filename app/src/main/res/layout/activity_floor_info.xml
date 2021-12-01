@@ -38,6 +38,13 @@
             android:layout_weight="1"
             android:text="2층 전시관"
             android:textSize="20sp"/>
+        <Button
+            android:id="@+id/special_floor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="특별 전시관"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 

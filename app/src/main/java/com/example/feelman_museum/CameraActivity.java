@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.feelman_museum;
+
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -49,12 +50,21 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-
+import com.example.feelman_museum.CameraConnectionFragment;
+import com.example.feelman_museum.Description1;
+import com.example.feelman_museum.Description2;
+import com.example.feelman_museum.Description3;
+import com.example.feelman_museum.Description4;
+import com.example.feelman_museum.LegacyCameraConnectionFragment;
+import com.example.feelman_museum.R;
 import com.example.feelman_museum.env.ImageUtils;
 import com.example.feelman_museum.env.Logger;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
+
 import org.tensorflow.lite.examples.classification.tflite.Classifier;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
@@ -118,6 +128,9 @@ public abstract class CameraActivity extends AppCompatActivity
 
     setContentView(R.layout.tfe_ic_activity_camera);
 
+    ActionBar actionBar = getSupportActionBar();
+    actionBar.setTitle("인식시켜주세요");
+    
     if (hasPermission()) {
       setFragment();
     } else {
@@ -541,27 +554,22 @@ public abstract class CameraActivity extends AppCompatActivity
                   String.format("%.2f", (100 * recognition.getConfidence())) + "%   ");
 
 
-//        if (recognition.getTitle().equals("고인쇄박물관") && recognition.getConfidence() * 100 > 45)
-//          startActivity(new Intent(getApplicationContext(), Description9.class));
-//        if (recognition.getTitle().equals("초정행궁") && recognition.getConfidence() * 100 > 96)
-//          startActivity(new Intent(getApplicationContext(), Description1.class));
-//        if (recognition.getTitle().equals("문의문화재단지") && recognition.getConfidence() * 100 > 95)
-//          startActivity(new Intent(getApplicationContext(), Description2.class));
-//        if (recognition.getTitle().equals("백제전시관") && recognition.getConfidence() * 100 > 95)
-//          startActivity(new Intent(getApplicationContext(), Description3.class));
-//        if (recognition.getTitle().equals("상당산성") && recognition.getConfidence() * 100 > 95)
-//          startActivity(new Intent(getApplicationContext(), Description4.class));
-//        if (recognition.getTitle().equals("신채호사당") && recognition.getConfidence() * 100 > 90)
-//          startActivity(new Intent(getApplicationContext(), Description5.class));
-//        if (recognition.getTitle().equals("정북동토성") && recognition.getConfidence() * 100 > 95)
-//          startActivity(new Intent(getApplicationContext(), Description6.class));
-//        if (recognition.getTitle().equals("철당간") && recognition.getConfidence() * 100 > 80)
-//          startActivity(new Intent(getApplicationContext(), Description7.class));
-//        if (recognition.getTitle().equals("초정약수") && recognition.getConfidence() * 100 > 95)
-//          startActivity(new Intent(getApplicationContext(), Description8.class));
-//        if ( recognition.getTitle().equals("손병희유허지") && recognition.getConfidence() * 100 > 70)
-//          startActivity(new Intent(getApplicationContext(), Description10.class));
-//        }
+        if (recognition.getTitle().equals("흥수아이 1호") && recognition.getConfidence() * 100 > 95)
+        {
+          startActivity(new Intent(getApplicationContext(), Description1.class));
+        }
+        if (recognition.getTitle().equals("쌍코뿔이") && recognition.getConfidence() * 100 > 90)
+        {
+          startActivity(new Intent(getApplicationContext(), Description2.class));
+        }
+        if (recognition.getTitle().equals("동굴곰") && recognition.getConfidence() * 100 > 70)
+        {
+          startActivity(new Intent(getApplicationContext(), Description3.class));
+        }
+        if (recognition.getTitle().equals("간돌검") && recognition.getConfidence() * 100 > 99.9)
+        {
+          startActivity(new Intent(getApplicationContext(), Description4.class));
+        }
       }
 
 //      Recognition recognition1 = results.get(1);

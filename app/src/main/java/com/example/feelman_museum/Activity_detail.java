@@ -61,7 +61,7 @@ public class Activity_detail extends AppCompatActivity {
 
                     // reset() 함수만으로도 동작한다.
                     //mediaPlayer.reset();
-                    startButton.setText("재생 하기");
+                    startButton.setText("▶ 재생하기");
                 }
                 else // 미디어 리소스를 생성하고 플레이 시킨다.
                 {

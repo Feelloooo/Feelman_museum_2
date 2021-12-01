@@ -2,6 +2,7 @@ package com.example.feelman_museum;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +33,9 @@ public class Activity_heritage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heritage);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("소장유물");
 
         ViewPager viewPager = findViewById(R.id.viewPager);
         fragmentPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());

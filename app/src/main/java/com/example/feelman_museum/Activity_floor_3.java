@@ -1,21 +1,21 @@
 package com.example.feelman_museum;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class Activity_floor_1 extends AppCompatActivity {
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Activity_floor_3 extends AppCompatActivity {
     private WebView mWebView; // 웹뷰 선언
     private WebSettings mWebSettings; //웹뷰세팅
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_floor_1);
+        setContentView(R.layout.activity_floor_3);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("층별 안내");
@@ -37,7 +37,6 @@ public class Activity_floor_1 extends AppCompatActivity {
         mWebSettings.setDomStorageEnabled(true); // 로컬저장소 허용 여부
 
         // mWebView.loadUrl("https://weather.naver.com/today/16112101"); // 웹뷰에 표시할 웹사이트 주소, 웹뷰 시작
-        //mWebView.loadUrl("https://my.matterport.com/show/?m=FmqhAK76MrS");
-        mWebView.loadUrl("https://my.matterport.com/show/?m=wWQeU27BiJQ");
+        mWebView.loadUrl("https://my.matterport.com/show/?m=gT7PHbFJbLe");
     }
 }
